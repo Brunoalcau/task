@@ -3,10 +3,11 @@ import consign from 'consign';
 const PORT = 3000;
 
 const app = express();
-consign()
-.include('db.js')
-.then('models')
-.then('libs/middlewares.js')
-.then('routes')
-.then('libs/boot.js')
-.into(app);
+
+consign({verbose: false})
+  .include("libs/config.js")
+  .then("db.js")
+  .then("libs/middlewares.js")
+  .then("routes")
+  .then("libs/boot.js")
+  .into(app);
