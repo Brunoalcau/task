@@ -1,5 +1,5 @@
 module.exports = {
-  database: 'task',
+  database: 'task_test',
   username: 'root',
   password: 'root',
   host: '33.33.33.10',

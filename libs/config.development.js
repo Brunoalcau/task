@@ -1,3 +1,5 @@
+import logging from './logger.js';
+
 module.exports = {
   database: 'task',
   username: 'root',
@@ -7,6 +9,9 @@ module.exports = {
     dialect: 'mysql',
     define: {
       underscored: true
+    },
+    logging: (sql) => {
+      logging.info(`[${new Date()}] ${sql}`);
     }
   },
   jwtSecret: 'Ntalk$-AP1',
